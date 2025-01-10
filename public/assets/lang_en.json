@@ -1,0 +1,33 @@
+{
+    "name": "WonderShop",
+    "actLang": "English",
+    "langSelection": [
+        {"text": "Magyar", "sign": "hu"},
+        {"text": "English", "sign": "en"}
+    ],
+    "navItem": [
+        {"text": "Home", "link": "home"},
+        {"text": "Admin", "link": "admin"}
+    ],
+
+    "productsTitle1": "Products",
+
+    "adminTitle1": "Manage Products",
+    "adminTitle2": "Product List",
+    "adminList": [
+        {"text": "Product Name", "key": "name", "type": "text"},
+        {"text": "Product Category", "key": "category", "type": "text"},
+        {"text": "Product Description", "key": "description", "type": "textarea"},
+        {"text": "Product Price", "key": "price", "type": "number"},
+        {"text": "Actions"}
+    ],
+    "adminAddList": [
+        {"text": "Product Name", "key": "name", "type": "text"},
+        {"text": "Product Category", "key": "category", "type": "text"},
+        {"text": "Product Description", "key": "description", "type": "textarea"},
+        {"text": "Product Price", "key": "price", "type": "number"}
+    ],
+    "editButton": "Save",
+    "deleteButton": "Delete",
+    "createButton": "Add"
+}

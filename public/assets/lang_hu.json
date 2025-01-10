@@ -1,0 +1,38 @@
+{
+    "name": "Csodashop",
+    "actLang": "Magyar",
+    "langSelection": [
+        {"text":"Magyar", "sign":"hu"},
+        {"text":"English", "sign":"en"}
+    ],
+    "navItem": [
+        {"text": "Főoldal", "link": "home"},
+        {"text": "Admin", "link": "admin"}
+    ],
+
+    "productsTitle1": "Termékeink",
+
+
+    "adminTitle1": "Termékek kezelése",
+    "adminTitle2": "Termékek listája",
+    "adminList": [
+        {"text": "Termék neve", "key": "name", "type": "text"},
+        {"text": "Termék kategóriája", "key": "category", "type": "text"},
+        {"text": "Termék leírása", "key": "description", "type": "textarea"},
+        {"text": "Termék ára", "key": "price", "type": "number"},
+        {"text": "Műveletek"}
+    ],
+    "adminAddList": [
+        {"text": "Termék neve", "key": "name", "type": "text"},
+        {"text": "Termék kategóriája", "key": "category", "type": "text"},
+        {"text": "Termék leírása", "key": "description", "type": "textarea"},
+        {"text": "Termék ára", "key": "price", "type": "number"}
+    ],
+    "editButton": "Mentés",
+    "deleteButton": "Törlés",
+    "createButton": "Hozzáadás"
+    
+
+    
+
+}

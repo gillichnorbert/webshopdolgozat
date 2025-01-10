@@ -1,0 +1,236 @@
+/* Fő navigációs sáv */
+
+
+#navPrimary {
+    padding: 0;
+    background-color: rgba(23, 23, 23, 0.8);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(7px);
+  }
+  
+  #navPrimary .nav-link {
+    font-family: "Secondary-Font-Bold", "NotoSans-Bold", sans-serif;
+    line-height: 3.3rem;
+    text-align: center;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #navPrimary .nav-link:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgba(23, 23, 23, 0.8);
+  }
+  
+  .navbar-brand {
+    font-family: "Secondary-Font-Bold", "NotoSans-Bold", sans-serif;
+    line-height: 3.3rem;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-brand:hover {
+  
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Language selector dropdown */
+  .navbar-langselect {
+    list-style-type: none;
+    padding-right: 10px;
+    margin: 0;
+    display: flex;
+    font-size: 10px;
+    cursor: pointer;
+    justify-content: flex-end;
+  }
+  
+  .nav-lang {
+    font-family: "Secondary-Font-Bold", "NotoSans-Bold", sans-serif;
+    line-height: 3.3rem;
+    text-align: center;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    padding: 0 20px;
+    text-decoration: none;
+  }
+  
+  .dropdown-item {
+    display: block;
+    color: rgb(255, 255, 255);
+    font-family: "Secondary-Font-Bold", "NotoSans-Bold", sans-serif;
+    line-height: 3.3rem;
+    text-align: center;
+    font-weight: 200;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .dropdown-menu:hover .dropdown-item:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgba(23, 23, 23, 0.8);
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-menu {
+    background-color: rgba(23, 23, 23, 0.8);
+    padding: 0;
+    margin-top: 8px;
+    border: 0;
+    border-radius: 0;
+    visibility: hidden; 
+    opacity: 0; 
+    transition: opacity 0.3s, visibility 0.3s; 
+    right: 0;
+    line-height: 3.3rem;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dropdown-menu.show {
+    visibility: visible; 
+    max-height: 400px; 
+    opacity: 1;
+    transform: translateY(0); 
+  }
+  
+  .dropdown-item:hover {
+    background-color: rgba(23, 23, 23, 0.8) 
+  }
+  
+  /* Mobil nézet */
+  @media (max-width: 991px) {  
+    .navbar-brand {
+      line-height: 3.3rem;
+    }
+    
+    .navbar-collapse {
+      height: 0;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: height 0.5s ease, opacity 0.8s ease, transform 0.5s ease;
+      overflow: hidden; 
+    }
+  
+    .navbar-collapse.open {
+        height: 1000px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+  
+    button {
+      border: 0;
+      line-height: 3.3rem;
+    }
+  
+    /* Hamburger */
+    .hamburger {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    
+    .hamburger .line {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: rgb(255, 255, 255);
+      margin-block: 10px;
+      border-radius: 4px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    
+    .hamburger.active .line:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    
+    .hamburger.active .line:nth-child(2) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  
+    li .nav-item {
+      width: 100%; 
+      text-align: center; 
+      margin: 0 auto; 
+    }
+  
+    .nav-link {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      padding: 10px 0;
+      text-align: center;
+      opacity: 100%;
+    }
+  
+    .navbar-toggler {
+      display: block;
+    }
+  
+    .navbar-langselect {
+      margin: 0 auto;
+      justify-content: center;
+    }
+  
+    .dropdown-item {
+      font-size: 20px;
+    }
+    .dropdown-menu.show li {
+      display: inline;
+      width: 100%;
+      font-size: 20px;
+    }
+  
+    .dropdown-menu {
+      background: none;
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.5s ease;
+      overflow: hidden; 
+    }
+    
+    .dropdown-menu.show {
+      position: relative;
+      max-height: 800px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+  }
+  
+  /* Asztali nézet */
+  @media (min-width: 992px) {
+    .navbar-toggler {
+      display: none;
+    }
+  
+    .hamburger {
+      display: none;
+    }
+    .navbar-collapse {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  

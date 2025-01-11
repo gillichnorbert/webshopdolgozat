@@ -1,16 +1,22 @@
-
-<div class="container">
-    <h1>{{productstitle1}}</h1>
-    <div class="row">
-      <div class="col" *ngFor="let product of products">
-          <div class="card">
-              <div class="card-body">
-                  <h2 class="card-title">{{product.name}}</h2>
-                  <p class="card-text">{{product.price}} $</p>
-                  <p class="card-text">{{product.description}}</p>
+<div *ngIf="!isLanguagesLoaded">
+    <p>Loading...</p>
+  </div>
+  
+  <div *ngIf="isLanguagesLoaded">
+    <div class="container">
+        <h1>{{productstitle1}}</h1>
+        <div class="row">
+          <div class="col" *ngFor="let product of products">
+              <div class="card">
+                  <div class="card-body">
+                      <h2 class="card-title">{{product.name}}</h2>
+                      <p class="card-text">{{product.price}} $</p>
+                      <p class="card-text">{{product.description}}</p>
+                  </div>
               </div>
           </div>
       </div>
+    </div>
   </div>
-</div>
+
   

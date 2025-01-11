@@ -9,14 +9,7 @@ import { ConfigService } from './services/config.service';
 export class AppComponent {
   title = "Webshop";
 
-  isLanguagesLoaded = false;
-  constructor(private configService: ConfigService) {}
 
-  ngOnInit(): void {
-    this.configService.isLoaded().subscribe((loaded) => {
-      this.isLanguagesLoaded = loaded;
-    });
-  }
 
 
 }

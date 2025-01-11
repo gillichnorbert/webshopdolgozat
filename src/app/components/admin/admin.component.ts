@@ -7,7 +7,8 @@ import { ConfigService } from '../../services/config.service';
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent {
+  isLanguagesLoaded = false;
   products: any[] = []
   adminList: any[] = []
   adminAddList: any[] = []
@@ -27,23 +28,7 @@ export class AdminComponent implements OnInit {
 
 
   constructor(private productService: ProductService, private config:ConfigService) {
-    // config.getContent().subscribe((content) => {
-    //   this.title1 = content.adminTitle1
-    //   this.title2 = content.adminTitle2
-    //   this.adminList = content.adminList
-    //   this.adminAddList = content.adminAddList
-    //   this.editButton = content.editButton
-    //   this.deleteButton = content.deleteButton
-    //   this.createButton = content.createButton
-    // })
-  }
-
-  ngOnInit(): void {
-    this.productService.getProducts().subscribe((data: any) => {
-      this.products = Object.keys(data).map(key => ({ id: key, ...data[key] }))
-    })
-
-    this.config.getContent().subscribe((content) => {
+    config.getContent().subscribe((content) => {
       this.title1 = content.adminTitle1
       this.title2 = content.adminTitle2
       this.adminList = content.adminList
@@ -51,6 +36,16 @@ export class AdminComponent implements OnInit {
       this.editButton = content.editButton
       this.deleteButton = content.deleteButton
       this.createButton = content.createButton
+
+      config.isLoaded().subscribe((loaded) => {
+        this.isLanguagesLoaded = loaded;
+      })
+    })
+  }
+
+  ngOnInit(): void {
+    this.productService.getProducts().subscribe((data: any) => {
+      this.products = Object.keys(data).map(key => ({ id: key, ...data[key] }))
     })
   }
 

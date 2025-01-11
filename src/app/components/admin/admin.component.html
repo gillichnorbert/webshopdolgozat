@@ -1,4 +1,8 @@
-<div class="container">
+<div *ngIf="!isLanguagesLoaded">
+  <p>Loading...</p>
+</div>
+
+<div class="container" *ngIf="isLanguagesLoaded">
     <h2>{{title1}}</h2>
   
     <div *ngFor="let n of adminAddList" class="col create">

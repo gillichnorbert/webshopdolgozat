@@ -8,17 +8,21 @@ import { ConfigService } from '../../services/config.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  isLanguagesLoaded = false;
   products: any[] = [];
   productstitle1 = ""
   productstitle2 = ""
   categories: any[] = [];
 
   constructor(private productService: ProductService, private config:ConfigService) {
+
     config.getContent().subscribe((content) => {
       this.productstitle1 = content.productsTitle1
       this.productstitle2 = content.productsTitle2
-      this.categories = content.categories
     }) 
+    config.isLoaded().subscribe((loaded) => {
+      this.isLanguagesLoaded = loaded;
+    });
   }
 
   ngOnInit(): void {

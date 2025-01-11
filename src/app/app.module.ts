@@ -11,6 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+
+
 
 @NgModule({
   declarations: [
@@ -20,14 +24,20 @@ import { HttpClientModule } from '@angular/common/http';
     NavbarComponent
   ],
   imports: [
+    RouterModule.forRoot([
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'admin', component: AdminComponent }
+    ]),
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     FormsModule,
     HttpClientModule,
-    AngularFireDatabaseModule
+
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

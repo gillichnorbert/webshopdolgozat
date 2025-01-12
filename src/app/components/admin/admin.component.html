@@ -3,7 +3,7 @@
 </div>
 
 <div class="container" *ngIf="isLanguagesLoaded">
-    <h2>{{title1}}</h2>
+    <h2>{{adminTitle1}}</h2>
   
     <div *ngFor="let n of adminAddList" class="col create">
       <ng-container *ngIf="n.type == 'textarea'; else simainput">
@@ -18,7 +18,7 @@
   
     <button (click)="createProduct()" class="btn btn-primary mt-3">{{createButton}}</button>
   
-    <h3 class="mt-3">{{title2}}</h3>
+    <h3 class="mt-3">{{adminTitle2}}</h3>
     <table class="table" >
       <thead>
         <tr >

@@ -15,11 +15,12 @@ export class HomeComponent {
   categories: any[] = [];
 
   constructor(private productService: ProductService, private config:ConfigService) {
-
     config.getContent().subscribe((content) => {
+      if (content) {
       this.productstitle1 = content.productsTitle1
       this.productstitle2 = content.productsTitle2
-    }) 
+  }})
+     
     config.isLoaded().subscribe((loaded) => {
       this.isLanguagesLoaded = loaded;
     });

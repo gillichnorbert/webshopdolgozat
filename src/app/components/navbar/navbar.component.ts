@@ -20,10 +20,13 @@ export class NavbarComponent {
 
   constructor(private config: ConfigService, private router: Router) {
     config.getContent().subscribe((content) => {
-      this.langSelection = content.langSelection || [];
+      if (content) {
+        
+      
+      this.langSelection = content.langSelection;
       this.navItems = content.navItem;
-      this.name = content.name
-    });
+      this.name = content.name;
+  }});
   }
 
   toggleNavbar() {

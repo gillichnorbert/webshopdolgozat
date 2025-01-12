@@ -19,8 +19,8 @@ export class AdminComponent {
     price: 0
   }
 
-  title1 = ""
-  title2 = ""
+  adminTitle1 = ""
+  adminTitle2 = ""
   editButton = ""
   deleteButton = ""
   createButton = ""
@@ -29,14 +29,15 @@ export class AdminComponent {
 
   constructor(private productService: ProductService, private config:ConfigService) {
     config.getContent().subscribe((content) => {
-      this.title1 = content.adminTitle1
-      this.title2 = content.adminTitle2
+      if (content) {
+      this.adminTitle1 = content.adminTitle1
+      this.adminTitle2 = content.adminTitle2
       this.adminList = content.adminList
       this.adminAddList = content.adminAddList
       this.editButton = content.editButton
       this.deleteButton = content.deleteButton
       this.createButton = content.createButton
-
+      }
       config.isLoaded().subscribe((loaded) => {
         this.isLanguagesLoaded = loaded;
       })

@@ -9,7 +9,7 @@
     font-style: normal;
     font-weight: 400;
     width: 300px;
-    min-height: 400px;
+    height: 420px;
     background-size: 75%;
     background-repeat: no-repeat;
     background-position: center;
@@ -18,7 +18,17 @@
     transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
 
+.card .category {   
+    bottom: 0;
+}
+
 .card:hover {
     transform: scale(1.01);
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+}
+
+.categ {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 30px;
 }
